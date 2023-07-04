@@ -10,6 +10,7 @@ login_form.addEventListener('submit',async (e)=>{
     };
     try{
         await axios.post('http://localhost:3000/user/login',login_cred);
+        window.location="../chat/chat.html"
     }
     catch(err){
         console.log(err);
