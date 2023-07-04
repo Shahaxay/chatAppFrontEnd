@@ -1,0 +1,17 @@
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+.form{
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;
+    padding: 1rem;
+    line-height: 2;
+
+}
+.center{
+    text-align: center;
+}
