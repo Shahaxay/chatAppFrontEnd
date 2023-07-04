@@ -15,3 +15,22 @@
 .center{
     text-align: center;
 }
+footer{
+    position: fixed;
+    bottom:0;
+    background-color: blue;
+    width: 100vw;
+    padding: .3rem;
+}
+footer input{
+    width: 50vw;
+}
+
+.chatDiv{
+    width: 50vw;
+    /* border: 1px solid black; */
+    margin:0 auto;
+    line-height: 2;
+    padding: .5rem;
+
+}

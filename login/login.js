@@ -15,3 +15,5 @@ login_form.addEventListener('submit',async (e)=>{
         console.log(err);
     }
 })
+
+login_form.reset();

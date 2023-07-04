@@ -24,6 +24,7 @@ signup_form_submit.addEventListener('click',async (e)=>{
         }
         console.log(err);
     }
+    signup_form.reset();
     
 })
 
