@@ -2,6 +2,7 @@ const chat_dest=document.getElementById('chat_dest');
 const compose_msg=document.getElementById('compose_msg');
 const send_msg_form=document.getElementById('send_msg_form');
 
+//adding message on the screen
 function addMessage(name,msg){
     let username=localStorage.getItem('name');
     if(name===username) name='You';
@@ -15,6 +16,7 @@ function addMessage(name,msg){
     }
 }
 
+//sending message to the server
 send_msg_form.addEventListener('submit',async (e)=>{
     e.preventDefault();
     const msg_obj={
@@ -30,7 +32,9 @@ send_msg_form.addEventListener('submit',async (e)=>{
     }
 })
 
-window.addEventListener('DOMContentLoaded',async()=>{
+//fetching all the message from the server
+async function fetchAllMessages(){
+    chat_dest.innerHTML='';
     try{
         const messages=await axios.get('http://localhost:3000/get-messages',{headers:{token:localStorage.getItem('token')}});
         console.log(messages);
@@ -41,4 +45,10 @@ window.addEventListener('DOMContentLoaded',async()=>{
     catch(err){
         console.log(err);
     }
-})
+}
+
+//on reload
+// window.addEventListener('DOMContentLoaded',fetchAllMessages)
+
+//setting time interval for fetching all the message
+setInterval(fetchAllMessages,1000);
