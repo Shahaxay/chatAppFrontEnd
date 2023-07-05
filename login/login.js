@@ -9,7 +9,8 @@ login_form.addEventListener('submit',async (e)=>{
         password:password.value
     };
     try{
-        await axios.post('http://localhost:3000/user/login',login_cred);
+        const token=await axios.post('http://localhost:3000/user/login',login_cred);
+        localStorage.setItem('token',token.data.id);
         window.location="../chat/chat.html"
     }
     catch(err){
