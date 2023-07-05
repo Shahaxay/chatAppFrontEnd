@@ -11,6 +11,7 @@ login_form.addEventListener('submit',async (e)=>{
     try{
         const token=await axios.post('http://localhost:3000/user/login',login_cred);
         localStorage.setItem('token',token.data.id);
+        localStorage.setItem('name',token.data.name);
         window.location="../chat/chat.html"
     }
     catch(err){

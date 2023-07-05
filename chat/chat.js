@@ -1,14 +1,16 @@
 const chat_dest=document.getElementById('chat_dest');
 const compose_msg=document.getElementById('compose_msg');
 const send_msg_form=document.getElementById('send_msg_form');
-function addMessage(id,msg){
+
+function addMessage(name,msg){
+    let username=localStorage.getItem('name');
+    if(name===username) name='You';
     const tr=document.createElement('tr');
     const td=document.createElement('td');
-    td.appendChild(document.createTextNode(id+" : "+msg));
+    td.appendChild(document.createTextNode(name+" : "+msg));
     tr.appendChild(td);
     chat_dest.appendChild(tr);
-    if(id==='yours_id'){
-        console.log("enter");
+    if(name==='You'){
         tr.style.backgroundColor="#dabce5";
     }
 }
@@ -20,8 +22,21 @@ send_msg_form.addEventListener('submit',async (e)=>{
     }
     try{
         const result=await axios.post('http://localhost:3000/send-message',msg_obj,{headers:{token:localStorage.getItem('token')}});
-        addMessage('yours_id',compose_msg.value);
+        addMessage('You',compose_msg.value);
         send_msg_form.reset();
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+window.addEventListener('DOMContentLoaded',async()=>{
+    try{
+        const messages=await axios.get('http://localhost:3000/get-messages',{headers:{token:localStorage.getItem('token')}});
+        console.log(messages);
+        messages.data.forEach(message=>{
+            addMessage(message.name,message.message);
+        });
     }
     catch(err){
         console.log(err);
