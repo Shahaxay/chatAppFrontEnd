@@ -3,7 +3,36 @@
     margin: 0;
     box-sizing: border-box; 
 }
+#actions{
+    float: right;
+    width: 20vw;
+    height: 100vh;
+    border:1px solid black;
+    padding: .5rem;
+}
 
+.center{
+    text-align: center;
+}
+.chatDiv{
+    width: 55vw;
+    float: left;
+    /* border: 1px solid red; */
+    line-height: 2;
+    padding: .5rem;
+    margin-bottom: 3rem;
+
+}
+/*this display create group form will be executed later*/
+/* #create_group_div{
+    display: none;
+    clear: both;
+    width: 50vw;
+    height:50vh;
+    display:block ;
+    margin: 25vh auto;
+    border: 1px solid red;   
+} */
 .form{
     border: 1px solid black;
     width: 50%;
@@ -11,9 +40,6 @@
     padding: 1rem;
     line-height: 2;
 
-}
-.center{
-    text-align: center;
 }
 footer{
     position: fixed;
@@ -26,12 +52,24 @@ footer input{
     width: 50vw;
 }
 
-.chatDiv{
-    width: 50vw;
-    /* border: 1px solid black; */
-    margin:0 auto;
-    line-height: 2;
-    padding: .5rem;
-    margin-bottom: 3rem;
+#group_chat{
+    float: left;
+    border: 1px solid black;
+    height: 100vh;
+    width: 20vw;
+    padding: 1rem;
+}
+#send_invitation_div{
+    border: 1px solid red;
+    background-color: aqua;
+    width: 50%;
+    margin: auto;
+    height: 50vh;
+    place-items: center;
+    display: none;
+}
 
+ul{
+    list-style: none;
+    line-height: 1.5rem;
 }

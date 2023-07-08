@@ -8,12 +8,39 @@
 </head>
 <body>
     <h1 class="center">Chat App</h1>
+    <div id="group_chat">
+        <button id="inbox_btn">Invitations</button><br>
+        <button id="display_group">Dsplay All Groups</button>
+        <ul id="group_list_dest">
+        </ul>
+    </div>
     <div class="chatDiv">
         <table>
             <tr><td>you joined</td></tr>
             <tr><td>Mr x joined</td></tr> 
             <table id="chat_dest"></table>
         </table>
+    </div>
+    <div id="actions">
+        <ul id="actions_dest">
+            <li><button id="create_group">Create Group Chat</button></li>
+            <li><button id="invite_friends">Invite friends</button></li>
+        </ul>
+    </div>
+    <!-- <div id="create_group_div">
+        <form id="create_group_form">
+            <label for="group_name">Group Name</label>
+            <input type="text" id="group_name">
+            <button type="submit">Create</button>
+        </form>
+
+    </div> -->
+    <div id="send_invitation_div">
+        <form id="send_invitation_form">
+            <h3>Group Invitation</h3><br>
+            <span id="user_list_dest"></span>
+            <button type="submit">Invites</button>
+        </form>
     </div>
     <footer>
         <form id="send_msg_form"  class="center">
