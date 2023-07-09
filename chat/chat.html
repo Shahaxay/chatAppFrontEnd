@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Page</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <h1 class="center">Chat App</h1>
-    <div id="group_chat">
-        <button id="inbox_btn">Invitations</button><br>
-        <button id="display_group">Dsplay All Groups</button>
-        <ul id="group_list_dest">
-        </ul>
-    </div>
-    <div class="chatDiv">
-        <table>
-            <tr><td>you joined</td></tr>
-            <tr><td>Mr x joined</td></tr> 
-            <table id="chat_dest"></table>
-        </table>
-    </div>
-    <div id="actions">
-        <ul id="actions_dest">
-            <li><button id="create_group">Create Group Chat</button></li>
-            <li><button id="invite_friends">Invite friends</button></li>
-        </ul>
+    <div id="main">
+        <div id="group_chat">
+            <button id="inbox_btn">Invitations</button><br>
+            <button id="display_group">Dsplay All Groups</button>
+            <ul id="group_list_dest">
+            </ul>
+        </div>
+        <div id="chatDiv">
+            <div id="serch_member">
+                <form id="search_form">
+                    <label for="search_category">Want to Add Member? Search by</label>
+                    <select name="" id="search_category" required>
+                        <option value="email">Email</option>
+                        <option value="name">Name</option>
+                        <option value="phone">Phone</option>
+                    </select>
+                    <input type="text" id="searched_user" required>
+                    <button type="submit">search</button>
+                </form>
+                <button id="view_group_member">View Group Members</button>
+            </div>
+            <table>
+                <tr>
+                    <td>you joined</td>
+                </tr>
+                <tr>
+                    <td>Mr x joined</td>
+                </tr>
+                <table id="chat_dest"></table>
+            </table>
+        </div>
+        <div id="actions">
+            <ul id="actions_dest">
+                <li><button id="create_group">Create Group Chat</button></li>
+                <li><button id="invite_friends">Invite friends</button></li>
+            </ul>
+        </div>
     </div>
     <!-- <div id="create_group_div">
         <form id="create_group_form">
@@ -42,13 +63,34 @@
             <button type="submit">Invites</button>
         </form>
     </div>
+    <!-- groupmemberlist -->
+    <div id="group_member_div">
+        <div>
+            <h3 class="center">Group members</h3>
+            <ul id="group_member_list_dest">
+            </ul>
+        </div>
+    </div>
+    <!-- eachMemberAction -->
+    <div id="each_group_member_div">
+        <ul id="group_member_action_dest">
+        </ul>
+    </div>
+    <!-- search -->
+    <div id="searched_member_div">
+        <ul id="searched_member_dest">
+        </ul>
+    </div>
     <footer>
-        <form id="send_msg_form"  class="center">
-            <input type="text" id="compose_msg" >
+        <form id="send_msg_form" class="center">
+            <input type="text" id="compose_msg">
             <button type="submit">send</button>
         </form>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./chat.js"></script>
 </body>
+
 </html>

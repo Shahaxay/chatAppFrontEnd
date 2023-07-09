@@ -4,7 +4,7 @@
     box-sizing: border-box; 
 }
 #actions{
-    float: right;
+    /* float: left; */
     width: 20vw;
     height: 100vh;
     border:1px solid black;
@@ -14,13 +14,14 @@
 .center{
     text-align: center;
 }
-.chatDiv{
-    width: 55vw;
-    float: left;
-    /* border: 1px solid red; */
+#chatDiv{
+    width: 60vw;
+    height: 100vh;
+    border: 1px solid red;
+    overflow-x:hidden;
     line-height: 2;
     padding: .5rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 
 }
 /*this display create group form will be executed later*/
@@ -53,21 +54,62 @@ footer input{
 }
 
 #group_chat{
-    float: left;
     border: 1px solid black;
     height: 100vh;
     width: 20vw;
     padding: 1rem;
 }
-#send_invitation_div{
+
+#group_member_div,#each_group_member_div,#searched_member_div,#send_invitation_div{
+    display: none;
+    /* display: grid; */
+    place-content:center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    
+}
+#group_member_list_dest,#send_invitation_form{
+    width: 50vw;
+    height: 50vh;
+    overflow-y: scroll;
+    background-color: aqua;
+    padding: 2rem;
+}
+
+#group_member_action_dest,#searched_member_dest{
+    width: 40vw;
+    height: 40vw;
+    background-color: rgb(226, 236, 236);
+    /* display:none; */
+    padding: 2rem;
+}
+
+#main{
+    display: flex;
+}
+
+#serch_member{
+border: 1px double red;
+display: none;
+place-items: center;
+}
+
+#searched_member_dest{
+    background-color: rgb(174, 104, 118);
+}
+
+/* #send_invitation_div{
     border: 1px solid red;
     background-color: aqua;
-    width: 50%;
-    margin: auto;
-    height: 50vh;
+    width: 100vw;
+    height: 100vh;
     place-items: center;
     display: none;
-}
+    position: absolute;
+} */
+
 
 ul{
     list-style: none;
